@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-function MySkill() {
+const MySkill = () => {
   return <div>
     <h2>My Skill</h2>
       <ul>
@@ -14,10 +14,7 @@ function MySkill() {
   </div>
 }
 
-function Header(props: { name: string }) {
-  return <h1>{props.name} Page</h1>;
-}
+const Header = (props: { name: string }) => <h1>{props.name} Page</h1>
 
 ReactDOM.render(<Header name="Casaub0n" />, document.querySelector(".header"))
 ReactDOM.render(<MySkill />, document.querySelector(".mySkill"))
-

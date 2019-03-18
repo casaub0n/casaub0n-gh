@@ -1,9 +1,17 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import styled, { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'NotoSansJP';
+    src: url('./fonts/NotoSansJP-Regular.otf');
+  }
+`
 
 const MySkill = () => {
-  return <div>
-    <h2>My Skill</h2>
+  return <>
+    <h1>My Skill</h1>
       <ul>
         <li>Java</li>
         <li>Publish SubScribe(Redis)</li>
@@ -11,10 +19,21 @@ const MySkill = () => {
         <li>JavaScript</li>
         <li>Linux</li>
       </ul>
-  </div>
+  </>
 }
 
-const Header = (props: { name: string }) => <h1>{props.name} Page</h1>
+const HeaderStyle = styled.header`
+  font-family: 'NotoSansJP';
+  font-weight: normal;
+`
 
-ReactDOM.render(<Header name="Casaub0n" />, document.querySelector(".header"))
-ReactDOM.render(<MySkill />, document.querySelector(".mySkill"))
+const Header = (props: { name: string }) => <HeaderStyle>{props.name} Page</HeaderStyle>
+
+const App = () => {
+  return <>
+    <Header name='Casaub0n' />
+    <MySkill />
+    <GlobalStyle />
+  </>
+}
+ReactDOM.render(<App />, document.querySelector(".app"))

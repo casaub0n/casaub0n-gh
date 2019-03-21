@@ -1,5 +1,7 @@
 const HTMLPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+const COPY_RULES = {}
 module.exports = {
   mode: "development",
   plugins: [
@@ -8,7 +10,16 @@ module.exports = {
       title: 'My App',
       path: __dirname + '/casaub0n.github.io',
       filename: 'index.html'
-    })
+    }),
+    new CopyWebpackPlugin(
+      [
+        {
+          from: 'src/fonts',
+          to: 'fonts/'
+        },
+      ],
+      { context: '' }
+    )
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
@@ -34,6 +45,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        use: "file-loader"
       }
     ]
   }

@@ -36,6 +36,10 @@ const App = () => {
       <meta property='og:type' content='website'/>
       <meta property='og:description' content='Casaub0n WebSite'/>
       <meta property='og:site_name' content='Casaub0n WebSite'/>
+      <meta name="twitter:card" content="summary"/>
+      <meta name="twitter:site" content="@casaub0n"/>
+      <meta property="og:url" content="https://casaub0n.github.io/"/>
+      <meta property="og:title" content="Casaub0n WebSite" /> 
       <title>Casaub0n Page</title>
     </Helmet>
     <Header name='Casaub0n' />

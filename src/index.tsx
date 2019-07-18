@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Helmet } from 'react-helmet'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -58,11 +60,6 @@ const GitHubLink = () => {
   )
 }
 
-const HeaderStyle = styled.h1`
-  font-family: 'NotoSansJP';
-  font-weight: normal;
-`
-
 const Header = (props: { name: string }) => {
   const classes = useStyles()
 
@@ -71,7 +68,7 @@ const Header = (props: { name: string }) => {
       <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="h6" color="inherit">
-            <HeaderStyle>{props.name} Page</HeaderStyle>
+            {props.name} Page
           </Typography>
         </Toolbar>
       </AppBar>
@@ -93,7 +90,7 @@ const MainArea = () => (
 
 const App = () => {
   return (
-    <>
+    <Provider store={createStore(() => ({}))}>
       <Helmet>
         <meta name="viewport" content="width=360,initial-scale=1" />
         <meta property="og:type" content="website" />
@@ -108,7 +105,7 @@ const App = () => {
       <Header name="Casaub0n" />
       <MainArea />
       <GlobalStyle />
-    </>
+    </Provider>
   )
 }
 

@@ -17,6 +17,14 @@ module.exports = {
           from: 'src/fonts',
           to: 'fonts/'
         },
+        {
+          from: 'assets/favicon.ico',
+          to: './'
+        },
+        {
+          from: 'src/manifest.json',
+          to: './'
+        }
       ],
       { context: '' }
     )

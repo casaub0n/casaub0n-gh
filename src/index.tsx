@@ -1,3 +1,13 @@
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  fab,
+  faJava,
+  faJsSquare,
+  faLinux
+} from '@fortawesome/free-brands-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container, CssBaseline } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import { makeStyles } from '@material-ui/core/styles'
@@ -16,15 +26,33 @@ const GlobalStyle = createGlobalStyle`
     src: url('./fonts/NotoSansJP-Regular.otf');
   }
 `
+
+library.add(fab, far, fas, faJava, faJsSquare, faLinux)
+
 const MySkill = () => (
   <>
     <h1>My Skill</h1>
     <ul>
-      <li>Java</li>
+      <li>
+        <i>
+          <FontAwesomeIcon icon={['fab', 'java']} />
+        </i>
+        Java
+      </li>
       <li>Publish SubScribe(Redis)</li>
       <li>ShellScript</li>
-      <li>JavaScript</li>
-      <li>Linux</li>
+      <li>
+        <i>
+          <FontAwesomeIcon icon={['fab', 'js-square']} />
+        </i>
+        JavaScript
+      </li>
+      <li>
+        <i>
+          <FontAwesomeIcon icon={['fab', 'linux']} />
+        </i>
+        Linux
+      </li>
     </ul>
   </>
 )

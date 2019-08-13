@@ -1,3 +1,13 @@
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  fab,
+  faJava,
+  faJsSquare,
+  faLinux
+} from '@fortawesome/free-brands-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container, CssBaseline } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import { makeStyles } from '@material-ui/core/styles'
@@ -16,15 +26,33 @@ const GlobalStyle = createGlobalStyle`
     src: url('./fonts/NotoSansJP-Regular.otf');
   }
 `
+
+library.add(fab, far, fas, faJava, faJsSquare, faLinux)
+
 const MySkill = () => (
   <>
     <h1>My Skill</h1>
     <ul>
-      <li>Java</li>
+      <li>
+        <i>
+          <FontAwesomeIcon icon={['fab', 'java']} />
+        </i>
+        Java
+      </li>
       <li>Publish SubScribe(Redis)</li>
       <li>ShellScript</li>
-      <li>JavaScript</li>
-      <li>Linux</li>
+      <li>
+        <i>
+          <FontAwesomeIcon icon={['fab', 'js-square']} />
+        </i>
+        JavaScript
+      </li>
+      <li>
+        <i>
+          <FontAwesomeIcon icon={['fab', 'linux']} />
+        </i>
+        Linux
+      </li>
     </ul>
   </>
 )
@@ -54,11 +82,23 @@ const BloggerLink = () => {
 const GitHubLink = () => {
   return (
     <>
-      <h1>GitHub</h1>
+      <h1>
+        <Icon
+          src="./assets/GitHub-Mark-120px-plus.png"
+          width="1.5em"
+          height="1.5em"
+        />
+        CODE
+      </h1>
       <a href="https://github.com/casaub0n">casaub0n</a>
     </>
   )
 }
+
+const Icon = styled.img`
+  height: 1.5em;
+  width: 1.5em;
+`
 
 const Header = (props: { name: string }) => {
   const classes = useStyles()

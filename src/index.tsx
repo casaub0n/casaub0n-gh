@@ -82,11 +82,23 @@ const BloggerLink = () => {
 const GitHubLink = () => {
   return (
     <>
-      <h1>GitHub</h1>
+      <h1>
+        <Icon
+          src="./assets/GitHub-Mark-120px-plus.png"
+          width="1.5em"
+          height="1.5em"
+        />
+        CODE
+      </h1>
       <a href="https://github.com/casaub0n">casaub0n</a>
     </>
   )
 }
+
+const Icon = styled.img`
+  height: 1.5em;
+  width: 1.5em;
+`
 
 const Header = (props: { name: string }) => {
   const classes = useStyles()

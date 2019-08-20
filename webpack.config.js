@@ -1,3 +1,5 @@
+/** @type import('webpack').Configuration */
+
 const HTMLPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
@@ -9,7 +11,7 @@ module.exports = {
     new HTMLPlugin({
       template: 'src/index.html',
       title: 'My App',
-      path: __dirname + '/casaub0n.github.io',
+      path: path.join(__dirname, '/casaub0n.github.io'),
       filename: 'index.html'
     }),
     new CopyWebpackPlugin(

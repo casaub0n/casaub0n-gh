@@ -6,7 +6,7 @@
   "author": "Casaubon <netzach.yoshida@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "webpack --mode production",
     "watch": "webpack-dev-server",
     "fix:js": "eslint 'src/**/*.{ts,tsx}' --fix && prettier 'src/**/*.{ts,tsx}' --write",
     "lint:js": "eslint 'src/**/*.{ts,tsx}'",
@@ -52,7 +52,6 @@
     "babel-loader": "^8.0.4",
     "copy-webpack-plugin": "^5.0.1",
     "coveralls": "^3.0.2",
-    "cross-env": "^5.2.0",
     "eslint": "^6.2.0",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",

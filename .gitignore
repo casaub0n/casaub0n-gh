@@ -14,3 +14,5 @@ node_modules
 casaub0n.github.io
 
 coverage
+
+.netlify

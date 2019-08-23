@@ -1,6 +1,6 @@
 {
-  "name": "casaub0n-gh",
-  "short_name": "casaub0n-gh",
+  "name": "casaub0n page",
+  "short_name": "casaub0n",
   "background_color": "#fc980c",
   "icons": [{
       "src": "./icon-256.png",
@@ -11,6 +11,6 @@
       "sizes": "192x192",
       "type": "image/png"
     }],
-  "start_url": "./?utm_source=homescreen",
-  "display": "standalone"
+  "start_url": ".",
+  "display": "browser"
 }

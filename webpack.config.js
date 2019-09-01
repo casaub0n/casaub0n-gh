@@ -3,6 +3,7 @@
 const HTMLPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin')
 
 const COPY_RULES = {}
 module.exports = {
@@ -68,6 +69,15 @@ module.exports = {
     ]
   },
   devtool: 'inline-source-map',
+  optimization: {
+    minimizer: [new TerserPlugin({
+      terserOptions: {
+        compress: {
+          arrows: false, // オブジェクトリテラルからアロー関数式への圧縮を無効化
+        }
+      }
+    })]
+  },
   devServer: {
     open: true,
     openPage: 'index.html',

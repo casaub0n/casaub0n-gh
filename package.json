@@ -53,7 +53,7 @@
     "copy-webpack-plugin": "5.0.4",
     "coveralls": "3.0.6",
     "eslint": "6.3.0",
-    "eslint-config-prettier": "6.1.0",
+    "eslint-config-prettier": "6.3.0",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.14.3",
     "file-loader": "3.0.1",

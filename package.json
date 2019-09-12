@@ -62,7 +62,7 @@
     "netlify-cli": "2.14.0",
     "prettier": "1.18.2",
     "react-test-renderer": "16.9.0",
-    "terser-webpack-plugin": "1.4.1",
+    "terser-webpack-plugin": "2.0.1",
     "ts-jest": "23.10.5",
     "ts-loader": "5.4.5",
     "typescript": "3.6.3",

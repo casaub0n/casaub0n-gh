@@ -51,7 +51,7 @@
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
     "copy-webpack-plugin": "5.0.5",
-    "coveralls": "3.0.7",
+    "coveralls": "3.0.9",
     "eslint": "6.6.0",
     "eslint-config-prettier": "6.5.0",
     "eslint-plugin-prettier": "3.1.1",

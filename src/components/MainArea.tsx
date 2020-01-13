@@ -1,104 +1,121 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   fab,
   faJava,
   faJsSquare,
-  faLinux
-} from '@fortawesome/free-brands-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Container, CssBaseline } from '@material-ui/core'
-import AppBar from '@material-ui/core/AppBar'
-import { makeStyles } from '@material-ui/core/styles'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { createGlobalStyle } from 'styled-components'
-import { Github } from 'styled-icons/boxicons-logos/Github'
-import { Twitter } from 'styled-icons/boxicons-logos/Twitter'
-import { Pen } from 'styled-icons/boxicons-regular/Pen'
+  faLinux,
+  faGithub,
+  faBlogger,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Container, CssBaseline } from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import { makeStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
+import styled from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'NotoSansJP';
-    src: url('./fonts/NotoSansJP-Regular.otf');
-  }
-`
-
-library.add(fab, far, fas, faJava, faJsSquare, faLinux)
-
-const MySkill = () => (
-  <>
-    <h1>My Skill</h1>
-    <ul>
-      <li>
-        <i>
-          <FontAwesomeIcon icon={['fab', 'java']} />
-        </i>
-        Java
-      </li>
-      <li>Publish SubScribe(Redis)</li>
-      <li>ShellScript</li>
-      <li>
-        <i>
-          <FontAwesomeIcon icon={['fab', 'js-square']} />
-        </i>
-        JavaScript
-      </li>
-      <li>
-        <i>
-          <FontAwesomeIcon icon={['fab', 'linux']} />
-        </i>
-        Linux
-      </li>
-    </ul>
-  </>
-)
+const FaIcon = styled.span`
+  margin-left: calc(-0.5em - 1px);
+  margin-right: 0.25em;
+`;
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1
   }
-})
+});
 
-const TwitterFollowButton = () => (
+library.add(
+  fab,
+  far,
+  fas,
+  faJava,
+  faJsSquare,
+  faLinux,
+  faGithub,
+  faBlogger,
+  faTwitter
+);
+
+const MySkill: React.SFC = () => (
+  <>
+    <h1>My Skill</h1>
+    <ul>
+      <li>
+        <FaIcon>
+          <FontAwesomeIcon icon={["fab", "java"]} />
+        </FaIcon>
+        Java
+      </li>
+      <li>Publish SubScribe(Redis)</li>
+      <li>ShellScript</li>
+      <li>
+        <FaIcon>
+          <FontAwesomeIcon icon={["fab", "js-square"]} />
+        </FaIcon>
+        JavaScript
+      </li>
+      <li>
+        <FaIcon>
+          <FontAwesomeIcon icon={["fab", "linux"]} />
+        </FaIcon>
+        Linux
+      </li>
+    </ul>
+  </>
+);
+
+const TwitterFollowButton: React.SFC = () => (
   <>
     <h1>
-      <Twitter size="2em" />
+      <FaIcon>
+        <FontAwesomeIcon icon={["fab", "twitter"]} />
+      </FaIcon>
       Twitter
     </h1>
     <a href="https://twitter.com/casaub0n">@casaub0n</a>
   </>
-)
+);
 
-const BloggerLink = () => {
+const BloggerLink: React.SFC = () => {
   return (
     <>
       <h1>
-        <Pen size="2em" />
+        <FaIcon>
+          <FontAwesomeIcon icon={["fab", "blogger"]} />
+        </FaIcon>
         Blog
       </h1>
       <a href="https://casaubonlib.blogspot.com/">blogger</a>
     </>
-  )
-}
+  );
+};
 
-const GitHubLink = () => {
+const GitHubLink: React.SFC = () => {
   return (
     <>
       <h1>
-        <Github size="2em" />
+        <FaIcon>
+          <FontAwesomeIcon icon={["fab", "github"]} />
+        </FaIcon>
         CODE
       </h1>
       <a href="https://github.com/casaub0n">casaub0n</a>
     </>
-  )
-}
+  );
+};
 
-const Header = (props: { name: string }) => {
-  const classes = useStyles()
+type Props = {
+  name: string;
+};
+
+const Header: React.SFC<Props> = (props: { name: string }) => {
+  const classes = useStyles();
 
   return (
     <header className={classes.root}>
@@ -110,23 +127,11 @@ const Header = (props: { name: string }) => {
         </Toolbar>
       </AppBar>
     </header>
-  )
-}
+  );
+};
 
-const MainArea = () => (
+const MainArea: React.FC = () => (
   <>
-    <Helmet>
-      <meta name="viewport" content="width=360,initial-scale=1" />
-      <meta name="description" content="Casaub0n WebSite" />
-      <meta property="og:type" content="website" />
-      <meta property="og:description" content="Casaub0n WebSite" />
-      <meta property="og:site_name" content="Casaub0n WebSite" />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@casaub0n" />
-      <meta property="og:url" content="https://casaub0n.github.io/" />
-      <meta property="og:title" content="Casaub0n WebSite" />
-      <title>Casaub0n Page</title>
-    </Helmet>
     <Header name="Casaub0n" />
     <CssBaseline />
     <Container maxWidth="sm">
@@ -135,8 +140,7 @@ const MainArea = () => (
       <BloggerLink />
       <TwitterFollowButton />
     </Container>
-    <GlobalStyle />
   </>
-)
+);
 
-export { MainArea }
+export { MainArea };

@@ -24,6 +24,11 @@ const FaIcon = styled.span`
   margin-right: 0.25em;
 `;
 
+const MyList = styled.li`
+  margin-left: calc(-0.5em - 1px);
+  margin-right: 0.25em;
+`;
+
 const useStyles = makeStyles({
   root: {
     flexGrow: 1
@@ -46,26 +51,26 @@ const MySkill: React.SFC = () => (
   <>
     <h1>My Skill</h1>
     <ul>
-      <li>
+      <MyList>
         <FaIcon>
           <FontAwesomeIcon icon={["fab", "java"]} />
         </FaIcon>
         Java
-      </li>
-      <li>Publish SubScribe(Redis)</li>
-      <li>ShellScript</li>
-      <li>
+      </MyList>
+      <MyList>Publish SubScribe(Redis)</MyList>
+      <MyList>ShellScript</MyList>
+      <MyList>
         <FaIcon>
           <FontAwesomeIcon icon={["fab", "js-square"]} />
         </FaIcon>
         JavaScript
-      </li>
-      <li>
+      </MyList>
+      <MyList>
         <FaIcon>
           <FontAwesomeIcon icon={["fab", "linux"]} />
         </FaIcon>
         Linux
-      </li>
+      </MyList>
     </ul>
   </>
 );

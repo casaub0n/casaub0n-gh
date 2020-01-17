@@ -11,11 +11,9 @@ import {
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Container, CssBaseline } from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
+import { Container, CssBaseline, Link, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import React from "react";
 import styled from "styled-components";
 
@@ -29,11 +27,28 @@ const MyList = styled.li`
   margin-right: 0.25em;
 `;
 
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1
+const useStyles = makeStyles(theme => ({
+  toolbar: {
+    borderBottom: `1px solid ${theme.palette.divider}`
+  },
+  toolbarTitle: {
+    flex: 1
+  },
+  toolbarSecondary: {
+    justifyContent: "space-between",
+    overflowX: "auto"
+  },
+  toolbarLink: {
+    padding: theme.spacing(1),
+    flexShrink: 0
   }
-});
+}));
+
+const mainStyles = makeStyles(theme => ({
+  mainGrid: {
+    marginTop: theme.spacing(3)
+  }
+}));
 
 library.add(
   fab,
@@ -47,7 +62,7 @@ library.add(
   faTwitter
 );
 
-const MySkill: React.SFC = () => (
+const MySkill: React.FC = () => (
   <>
     <h1>My Skill</h1>
     <ul>
@@ -75,7 +90,7 @@ const MySkill: React.SFC = () => (
   </>
 );
 
-const TwitterFollowButton: React.SFC = () => (
+const TwitterFollowButton: React.FC = () => (
   <>
     <h1>
       <FaIcon>
@@ -87,7 +102,7 @@ const TwitterFollowButton: React.SFC = () => (
   </>
 );
 
-const BloggerLink: React.SFC = () => {
+const BloggerLink: React.FC = () => {
   return (
     <>
       <h1>
@@ -101,7 +116,7 @@ const BloggerLink: React.SFC = () => {
   );
 };
 
-const GitHubLink: React.SFC = () => {
+const GitHubLink: React.FC = () => {
   return (
     <>
       <h1>
@@ -115,37 +130,63 @@ const GitHubLink: React.SFC = () => {
   );
 };
 
+// These are types for navigation bar
+type Section = { title: string; url: string };
 type Props = {
-  name: string;
+  sections: Section[];
 };
 
-const Header: React.SFC<Props> = (props: { name: string }) => {
+const Header: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
+  const { sections } = props;
 
   return (
-    <header className={classes.root}>
-      <AppBar position="static" color="default">
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            {props.name} Page
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </header>
+    <>
+      <Toolbar
+        component="nav"
+        variant="dense"
+        className={classes.toolbarSecondary}
+      >
+        {sections.map(section => (
+          <Link
+            color="inherit"
+            noWrap
+            key={section.title}
+            variant="body2"
+            href={section.url}
+            className={classes.toolbarLink}
+          >
+            {section.title}
+          </Link>
+        ))}
+      </Toolbar>
+    </>
   );
 };
 
-const MainArea: React.FC = () => (
-  <>
-    <Header name="Casaub0n" />
-    <CssBaseline />
-    <Container maxWidth="sm">
-      <MySkill />
-      <GitHubLink />
-      <BloggerLink />
-      <TwitterFollowButton />
-    </Container>
-  </>
-);
+// const hoge = ["home"];
+const sections = [{ title: "home", url: "#" }];
+const MainArea: React.FC = () => {
+  const classes = mainStyles();
+
+  return (
+    <>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Header sections={sections} />
+        <main>
+          <Grid container spacing={5} className={classes.mainGrid}>
+            <Grid item xs={12} md={8}>
+              <MySkill />
+              <GitHubLink />
+              <BloggerLink />
+              <TwitterFollowButton />
+            </Grid>
+          </Grid>
+        </main>
+      </Container>
+    </>
+  );
+};
 
 export { MainArea };

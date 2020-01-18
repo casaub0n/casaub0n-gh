@@ -1,0 +1,17 @@
+# デプロイしたいディレクトリの設定
+[build]
+  publish = "/build"
+
+# 本番環境のビルドコマンド
+[context.production]
+  command = "yarn && yarn deploy"
+
+# ステージング環境のビルドコマンド
+[context.staging]
+  command = "yarn && yarn build"
+
+# SPA用の設定
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

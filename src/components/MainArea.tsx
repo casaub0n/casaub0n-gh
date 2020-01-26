@@ -12,10 +12,18 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, CssBaseline, Link, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  createMuiTheme,
+  MuiThemeProvider
+} from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import React from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+`;
 
 const FaIcon = styled.span`
   margin-left: calc(-0.5em - 1px);
@@ -164,27 +172,47 @@ const Header: React.FC<Props> = (props: Props) => {
   );
 };
 
-// const hoge = ["home"];
 const sections = [{ title: "home", url: "#" }];
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: "#757ce8",
+      main: "#3f50b5",
+      dark: "#002884",
+      contrastText: "#fff"
+    },
+    secondary: {
+      light: "#ff7961",
+      main: "#f44336",
+      dark: "#ba000d",
+      contrastText: "#000"
+    }
+  }
+});
+
 const MainArea: React.FC = () => {
   const classes = mainStyles();
 
   return (
     <>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <Header sections={sections} />
-        <main>
-          <Grid container spacing={5} className={classes.mainGrid}>
-            <Grid item xs={12} md={8}>
-              <MySkill />
-              <GitHubLink />
-              <BloggerLink />
-              <TwitterFollowButton />
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <GlobalStyle />
+        <Container maxWidth="lg">
+          <Header sections={sections} />
+          <main>
+            <Grid container spacing={5} className={classes.mainGrid}>
+              <Grid item xs={12} md={8}>
+                <MySkill />
+                <GitHubLink />
+                <BloggerLink />
+                <TwitterFollowButton />
+              </Grid>
             </Grid>
-          </Grid>
-        </main>
-      </Container>
+          </main>
+        </Container>
+      </MuiThemeProvider>
     </>
   );
 };

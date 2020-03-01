@@ -1172,7 +1172,7 @@
     path-exists "^4.0.0"
     readdirp "^3.3.0"
 
-"@netlify/config@^0.1.12", "@netlify/config@^0.1.18", "@netlify/config@^0.1.7":
+"@netlify/config@^0.1.12", "@netlify/config@^0.1.18":
   version "0.1.18"
   resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.18.tgz#ac4ea7e74f6a99f25d34f1c1df866bc715a53ab1"
   dependencies:
@@ -1190,6 +1190,25 @@
     omit.js "^1.0.2"
     path-exists "^4.0.0"
     resolve "^1.14.2"
+
+"@netlify/config@^0.1.21":
+  version "0.1.21"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.21.tgz#92114fc6aa58a825b3c1f584ad4d1813e3826647"
+  dependencies:
+    chalk "^3.0.0"
+    configorama "^0.3.6"
+    deepmerge "^4.2.2"
+    dot-prop "^5.2.0"
+    filter-obj "^2.0.1"
+    find-up "^4.1.0"
+    indent-string "^4.0.0"
+    is-plain-obj "^2.1.0"
+    js-yaml "^3.13.1"
+    make-dir "^3.0.2"
+    map-obj "^4.1.0"
+    omit.js "^1.0.2"
+    path-exists "^4.0.0"
+    resolve "^1.15.1"
 
 "@netlify/functions-utils@^0.1.0":
   version "0.1.0"
@@ -6852,7 +6871,7 @@ is-plain-obj@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
 
-is-plain-obj@^2.0.0:
+is-plain-obj@^2.0.0, is-plain-obj@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
 
@@ -8016,6 +8035,12 @@ make-dir@^3.0.0:
   dependencies:
     semver "^6.0.0"
 
+make-dir@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-3.0.2.tgz#04a1acbf22221e1d6ef43559f43e05a90dbb4392"
+  dependencies:
+    semver "^6.0.0"
+
 makeerror@1.0.x:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
@@ -8437,12 +8462,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
 
-netlify-cli@2.35.0:
-  version "2.35.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.35.0.tgz#91859bf9ea448066826e0cdd51d1b8407ce24d11"
+netlify-cli@2.36.0:
+  version "2.36.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.36.0.tgz#150d2b97dc5ac6f577cefb743f6e353ecaba1e5c"
   dependencies:
     "@netlify/build" "^0.1.7"
-    "@netlify/config" "^0.1.7"
+    "@netlify/config" "^0.1.21"
     "@netlify/zip-it-and-ship-it" "^0.3.1"
     "@oclif/command" "^1.5.18"
     "@oclif/config" "^1.13.2"
@@ -8518,6 +8543,7 @@ netlify-cli@2.35.0:
     update-notifier "^2.5.0"
     uuid "^3.3.3"
     wait-port "^0.2.2"
+    winston "^3.2.1"
     wrap-ansi "^6.0.0"
     write-file-atomic "^3.0.0"
 
@@ -10844,7 +10870,7 @@ resolve@1.15.0:
   dependencies:
     path-parse "^1.0.6"
 
-resolve@^1.10.0, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.14.2, resolve@^1.3.2, resolve@^1.8.1:
+resolve@^1.10.0, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.14.2, resolve@^1.15.1, resolve@^1.3.2, resolve@^1.8.1:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.15.1.tgz#27bdcdeffeaf2d6244b95bb0f9f4b4653451f3e8"
   dependencies:

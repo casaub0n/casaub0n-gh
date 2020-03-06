@@ -8583,9 +8583,9 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
 
-netlify-cli@2.36.0:
-  version "2.36.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.36.0.tgz#150d2b97dc5ac6f577cefb743f6e353ecaba1e5c"
+netlify-cli@2.37.0:
+  version "2.37.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.37.0.tgz#90d7e5afd15654751ab9a9cb17d27b99f01aaa68"
   dependencies:
     "@netlify/build" "^0.1.7"
     "@netlify/config" "^0.1.21"

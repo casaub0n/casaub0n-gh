@@ -61,7 +61,7 @@
     "eslint-config-react": "1.1.7",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.19.0",
-    "netlify-cli": "2.37.0",
+    "netlify-cli": "2.38.0",
     "npm-normalize-package-bin": "1.0.1",
     "prettier": "1.19.1",
     "react-test-renderer": "16.13.0"

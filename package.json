@@ -63,7 +63,7 @@
     "eslint-plugin-react": "7.19.0",
     "netlify-cli": "2.39.0",
     "npm-normalize-package-bin": "1.0.1",
-    "prettier": "1.19.1",
+    "prettier": "2.0.2",
     "react-test-renderer": "16.13.0"
   }
 }

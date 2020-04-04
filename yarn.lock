@@ -8610,9 +8610,9 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
 
-netlify-cli@2.39.0:
-  version "2.39.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.39.0.tgz#831909b2fa7b633b783971273bf59b947ba3c17f"
+netlify-cli@2.40.0:
+  version "2.40.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.40.0.tgz#239ae8dbe9920e92030a890594d36322d3fa98f3"
   dependencies:
     "@netlify/build" "^0.1.84"
     "@netlify/config" "^0.4.1"

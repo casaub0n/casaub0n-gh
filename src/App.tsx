@@ -1,21 +1,11 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { MainAreaConnected } from "./containers/MainAreaContainer";
-import { CvConnected } from "./containers/CvContainer";
-import { store } from "./store";
-import { Route, HashRouter, Switch } from "react-router-dom";
+import React from 'react';
+import { MainArea } from './features/main/MainArea';
+import './App.css';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Provider store={store}>
-      <HashRouter>
-        <Switch>
-          <Route path="/" component={MainAreaConnected} />
-          <Route path="/cv" component={CvConnected} />
-        </Switch>
-      </HashRouter>
-    </Provider>
+    <MainArea />
   );
-};
+}
 
 export default App;

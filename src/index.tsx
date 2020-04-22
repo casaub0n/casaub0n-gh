@@ -10,9 +10,7 @@ import { Route } from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Route>
-        <Route path="/" component={App} />
-      </Route>
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

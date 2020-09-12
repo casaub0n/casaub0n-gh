@@ -6,7 +6,8 @@ import {
   faLinux,
   faGithub,
   faBlogger,
-  faTwitter
+  faTwitter,
+  faPython
 } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -42,44 +43,62 @@ library.add(
   faLinux,
   faGithub,
   faBlogger,
-  faTwitter
+  faTwitter,
+  faPython
 );
 
 const Hello: React.FC = () => <section>
   <h1>Takashi Yoshida</h1>
-  <p>Hello, I'm a programmer. My job is web developer.</p>
-  <p>I love TypeScript and React. Recently, I'm forcusing on JAMStack that's NextJS and more over, serverless.</p>
-  <p>Now I'm living on Auckland in New Zealand. I can work full-time job.</p>
+  <h2>About me</h2>
+  <p>I'm a programmer. My job is web developer.</p>
+  <p>I love TypeScript and React. Recently, My current focus are JAMStack that's NextJS and more serverless.</p>
+  <p>Now I'm living on Auckland in New Zealand. My work visa can be worked full-time job.</p>
+  <h2>Wrok Experience</h2>
+  <h3>Apr 2017-Aug 2019 Programmer</h3>
+  <p>EVC Inc. Chiyoda-Ku Tokyo</p>
+  <ul>
+    <li>Designed engineering Web System for video hosting service</li>
+    <li>Guidance and Training of subordinates(Web development)</li>
+    <li>Phone support</li>
+    <li>Quality Assurance</li>
+    <li>Exhibition salesman</li>
+    <li>Writing tutorial document</li>
+  </ul>
+  <h2>Education</h2>
+  <h3>Sep 2019 Kaplan International Languages Auckland</h3>
+  <p>Studying English</p>
+  <h3>Apr 2011-Mar 2017 Tokyo University of Technology Hachioji city Japan</h3>
+  <ul>
+    <li>Level of education: Bachelor of Computer Science</li>
+    <li>Training: Graduation Research(Machine learning for Object detection)</li>
+    <li>Training: Programming(Python, Java)</li>
+    <li>Setting up our lab</li>
+    <li>Setting up the server for machine learning(Linux, Cuda, Python)</li>
+  </ul>
 </section>
 
 const MySkill: React.FC = () => (
   <>
-    <h1>My Skill</h1>
+    <h2>Technical Skills</h2>
+    <p>I’m able to development Web Services from scratch.</p>
     <ul>
       <MyList>
-        <StyledIcon icon={faJava} />
-        Java
+        Languages: TypeScript, <StyledIcon icon={faPython} />Python, <StyledIcon icon={faJava} />Java
       </MyList>
-      <MyList>Publish SubScribe(Redis)</MyList>
-      <MyList>ShellScript</MyList>
-      <MyList>
-        <StyledIcon icon={faJsSquare} />
-        JavaScript
-      </MyList>
-      <MyList>
-          <StyledIcon icon={faLinux} />
-        Linux
-      </MyList>
+      <MyList>VCS: Git(GitHub)</MyList>
+      <MyList>Web Framework : JSF, Spring, Struts</MyList>
+      <MyList>Front-End : React, JQuery</MyList>
+      <MyList>DB: PostgreSQL, MySQL, SQL Server, Oracle DB</MyList>
+      <MyList>OS: <StyledIcon icon={faLinux} />Linux(Ubuntu, Cent OS), Windows, Windows Server</MyList>
+      <MyList>Publish SubScribe(Redis), ShellScript</MyList>
     </ul>
+    <p>We have a video hosting service. My job was full-stack developer.</p>
   </>
 );
 
 const TwitterFollowButton: React.FC = () => (
   <>
-    <h1>
-      <StyledIcon icon={faTwitter} />
-      Twitter
-    </h1>
+    <h2><StyledIcon icon={faTwitter} />Twitter</h2>
     <a href="https://twitter.com/casaub0n">@casaub0n</a>
   </>
 );
@@ -87,10 +106,7 @@ const TwitterFollowButton: React.FC = () => (
 const BloggerLink: React.FC = () => {
   return (
     <>
-      <h1>
-        <StyledIcon icon={faBlogger} />
-        Blog
-      </h1>
+      <h2><StyledIcon icon={faBlogger} />Blog</h2>
       <a href="https://casaubonlib.blogspot.com/">blogger</a>
     </>
   );
@@ -99,10 +115,7 @@ const BloggerLink: React.FC = () => {
 const GitHubLink: React.FC = () => {
   return (
     <>
-      <h1>
-        <StyledIcon icon={faGithub} />
-        CODE
-      </h1>
+      <h2><StyledIcon icon={faGithub} />CODE</h2>
       <a href="https://github.com/casaub0n">casaub0n</a>
     </>
   );

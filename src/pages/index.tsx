@@ -1,21 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { store } from './app/store';
-import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import App from '../components/App'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Home = () => <App />
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// amp-script requires absolute URLs, so we create a property `host` which we can use to calculate the script URL.
+export async function getServerSideProps({ req }: any) {
+  // WARNING: This is a generally unsafe application unless you're deploying to a managed platform like Vercel.
+  // Be sure your load balancer is configured to not allow spoofed host headers.
+  return { props: { host: `${getProtocol(req)}://${req.headers.host}` } }
+}
+
+function getProtocol(req: any) {
+  if (req.connection.encrypted) {
+    return 'https'
+  }
+  const forwardedProto = req.headers['x-forwarded-proto']
+  if (forwardedProto) {
+    return forwardedProto.split(/\s*,\s*/)[0]
+  }
+  return 'http'
+}
+
+export default Home

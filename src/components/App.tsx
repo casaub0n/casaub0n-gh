@@ -1,11 +1,8 @@
-import React from 'react';
-import { MainArea } from './features/main/MainArea';
-import './App.css';
+import React from 'react'
+import { MainArea } from './MainArea'
 
 function App() {
-  return (
-    <MainArea />
-  );
+  return <MainArea />
 }
 
-export default App;
+export default App

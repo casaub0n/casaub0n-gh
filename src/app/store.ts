@@ -1,3 +1,3 @@
-import { createStore } from "@reduxjs/toolkit";
+import { createStore } from '@reduxjs/toolkit'
 
-export const store = createStore(() => ({}));
+export const store = createStore(() => ({}))

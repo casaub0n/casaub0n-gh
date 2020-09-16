@@ -78,7 +78,11 @@ const Hello: React.FC = () => (
 )
 
 const MySkill: React.FC = () => {
-  const iconStyle: React.CSSProperties = { width: '0.25em' }
+  const iconStyle: React.CSSProperties = {
+    width: '1em',
+    height: '1em',
+    marginRight: '0.25em',
+  }
   return (
     <>
       <h2>Technical Skills</h2>
@@ -105,12 +109,17 @@ const MySkill: React.FC = () => {
   )
 }
 
+const iconComponentStyle: React.CSSProperties = {
+  width: '1em',
+  height: '1em',
+  marginRight: '0.25em',
+}
+
 const TwitterFollowButton: React.FC = () => {
-  const iconStyle: React.CSSProperties = { width: '0.25em' }
   return (
     <>
       <h2>
-        <FontAwesomeIcon style={iconStyle} icon={faTwitter} />
+        <FontAwesomeIcon style={iconComponentStyle} icon={faTwitter} />
         Twitter
       </h2>
       <a href="https://twitter.com/casaub0n">@casaub0n</a>
@@ -119,12 +128,10 @@ const TwitterFollowButton: React.FC = () => {
 }
 
 const BloggerLink: React.FC = () => {
-  const iconStyle: React.CSSProperties = { width: '0.25em' }
-
   return (
     <>
       <h2>
-        <FontAwesomeIcon style={iconStyle} icon={faBlogger} />
+        <FontAwesomeIcon style={iconComponentStyle} icon={faBlogger} />
         Blog
       </h2>
       <a href="https://casaubonlib.blogspot.com/">blogger</a>
@@ -133,12 +140,10 @@ const BloggerLink: React.FC = () => {
 }
 
 const GitHubLink: React.FC = () => {
-  const iconStyle: React.CSSProperties = { width: '0.25em' }
-
   return (
     <>
       <h2>
-        <FontAwesomeIcon style={iconStyle} icon={faGithub} />
+        <FontAwesomeIcon style={iconComponentStyle} icon={faGithub} />
         CODE
       </h2>
       <a href="https://github.com/casaub0n">casaub0n</a>

@@ -1,6 +1,8 @@
 import React from 'react'
 import App from '../components/App'
 
+export const config = { amp: true }
+
 const Home = () => <App />
 
 // amp-script requires absolute URLs, so we create a property `host` which we can use to calculate the script URL.

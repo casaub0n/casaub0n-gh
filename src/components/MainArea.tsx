@@ -1,35 +1,25 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   fab,
-  faJava,
-  faJsSquare,
   faLinux,
   faGithub,
   faBlogger,
   faTwitter,
   faPython,
+  faJsSquare,
+  faJava,
 } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fas, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container, CssBaseline, Grid } from '@material-ui/core'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
-  @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
-  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP&subset=japanese");
-  @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-`
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  margin-right: 0.25em;
-`
-const MyList = styled.li`
-  margin-left: calc(-0.5em - 1px);
-  margin-right: 0.25em;
-`
+// const MyList = styled.li`
+//   margin-left: calc(-0.5em - 1px);
+//   margin-right: 0.25em;
+// `
 
 library.add(
   fab,
@@ -41,7 +31,8 @@ library.add(
   faGithub,
   faBlogger,
   faTwitter,
-  faPython
+  faPython,
+  faCoffee
 )
 
 const Hello: React.FC = () => (
@@ -86,45 +77,54 @@ const Hello: React.FC = () => (
   </section>
 )
 
-const MySkill: React.FC = () => (
-  <>
-    <h2>Technical Skills</h2>
-    <p>I’m able to development Web Services from scratch.</p>
-    <ul>
-      <MyList>
-        Languages: TypeScript, <StyledIcon icon={faPython} />
-        Python, <StyledIcon icon={faJava} />
-        Java
-      </MyList>
-      <MyList>VCS: Git(GitHub)</MyList>
-      <MyList>Web Framework : JSF, Spring, Struts</MyList>
-      <MyList>Front-End : React, JQuery</MyList>
-      <MyList>DB: PostgreSQL, MySQL, SQL Server, Oracle DB</MyList>
-      <MyList>
-        OS: <StyledIcon icon={faLinux} />
-        Linux(Ubuntu, Cent OS), Windows, Windows Server
-      </MyList>
-      <MyList>Publish SubScribe(Redis), ShellScript</MyList>
-    </ul>
-    <p>We have a video hosting service. My job was full-stack developer.</p>
-  </>
-)
+const MySkill: React.FC = () => {
+  const iconStyle: React.CSSProperties = { width: '0.25em' }
+  return (
+    <>
+      <h2>Technical Skills</h2>
+      <p>I’m able to development Web Services from scratch.</p>
+      <ul>
+        <li>
+          Languages: TypeScript,{' '}
+          <FontAwesomeIcon style={iconStyle} icon={faPython} />
+          Python, <FontAwesomeIcon style={iconStyle} icon={faJava} />
+          Java
+        </li>
+        <li>VCS: Git(GitHub)</li>
+        <li>Web Framework : JSF, Spring, Struts</li>
+        <li>Front-End : React, JQuery</li>
+        <li>DB: PostgreSQL, MySQL, SQL Server, Oracle DB</li>
+        <li>
+          OS: <FontAwesomeIcon style={iconStyle} icon={faLinux} />
+          Linux(Ubuntu, Cent OS), Windows, Windows Server
+        </li>
+        <li>Publish SubScribe(Redis), ShellScript</li>
+      </ul>
+      <p>We have a video hosting service. My job was full-stack developer.</p>
+    </>
+  )
+}
 
-const TwitterFollowButton: React.FC = () => (
-  <>
-    <h2>
-      <StyledIcon icon={faTwitter} />
-      Twitter
-    </h2>
-    <a href="https://twitter.com/casaub0n">@casaub0n</a>
-  </>
-)
-
-const BloggerLink: React.FC = () => {
+const TwitterFollowButton: React.FC = () => {
+  const iconStyle: React.CSSProperties = { width: '0.25em' }
   return (
     <>
       <h2>
-        <StyledIcon icon={faBlogger} />
+        <FontAwesomeIcon style={iconStyle} icon={faTwitter} />
+        Twitter
+      </h2>
+      <a href="https://twitter.com/casaub0n">@casaub0n</a>
+    </>
+  )
+}
+
+const BloggerLink: React.FC = () => {
+  const iconStyle: React.CSSProperties = { width: '0.25em' }
+
+  return (
+    <>
+      <h2>
+        <FontAwesomeIcon style={iconStyle} icon={faBlogger} />
         Blog
       </h2>
       <a href="https://casaubonlib.blogspot.com/">blogger</a>
@@ -133,10 +133,12 @@ const BloggerLink: React.FC = () => {
 }
 
 const GitHubLink: React.FC = () => {
+  const iconStyle: React.CSSProperties = { width: '0.25em' }
+
   return (
     <>
       <h2>
-        <StyledIcon icon={faGithub} />
+        <FontAwesomeIcon style={iconStyle} icon={faGithub} />
         CODE
       </h2>
       <a href="https://github.com/casaub0n">casaub0n</a>
@@ -169,7 +171,6 @@ const MainArea: React.FC = () => {
     <>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <GlobalStyle />
         <Container maxWidth="lg">
           <Grid container alignItems="center" justify="center">
             <main>

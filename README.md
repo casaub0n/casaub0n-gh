@@ -1,12 +1,20 @@
 # My GitHub Pages
-[![Netlify Status](https://api.netlify.com/api/v1/badges/24bacd28-8b9b-4356-8958-5d0385dc6a37/deploy-status)](https://app.netlify.com/sites/casaub0n/deploys)
-[casaub0n.netlify.com](https://casaub0n.netlify.com/)
-
-## TODO
-- [X] CI deploy
+[https://casaub0n-gh.casaub0n.vercel.app/](https://casaub0n-gh.casaub0n.vercel.app/)
 
 ## How to develop
+- `yarn install`
+- `yarn dev`
+
+## How to production build
+- `yarn build`
 - `yarn start`
+
+## How to deploy
+```console
+# first time
+$ yarn vercel login
+$ yarn vercel
+```
 
 ## Fix this error
 ```console

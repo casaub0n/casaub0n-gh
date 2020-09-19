@@ -10,16 +10,18 @@ import theme from '../components/theme'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 
 export default class MyDocument extends Document {
-  // static async getInitialProps(ctx: DocumentContext) {
-  //   const initialProps = await Document.getInitialProps(ctx)
-  //   return { ...initialProps }
-  // }
-
   render() {
     return (
       <Html lang="en">
         <Head />
         {/* PWA primary color */}
+        <title>casaub0n page</title>
+        <meta
+          name="description"
+          content="What's up! I'm a TypeScript lover programmer. Nice to meet you."
+        />
+        <meta property="og:title" content=" casaub0n page" />
+        <meta name="twitter:card" content="summary" />
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link
           rel="stylesheet"

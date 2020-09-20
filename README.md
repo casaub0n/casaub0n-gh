@@ -1,5 +1,5 @@
 # My GitHub Pages
-[https://casaub0n-gh.casaub0n.vercel.app/](https://casaub0n-gh.casaub0n.vercel.app/)
+[https://casaub0n-gh.vercel.app/](https://casaub0n-gh.vercel.app/)
 
 ## How to develop
 - `yarn install`

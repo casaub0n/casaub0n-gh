@@ -35,7 +35,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "7.12.12",
+    "@babel/plugin-proposal-decorators": "7.12.13",
     "@types/react-router-dom": "5.1.7",
     "@types/styled-components": "5.1.7",
     "@typescript-eslint/eslint-plugin": "4.14.2",
